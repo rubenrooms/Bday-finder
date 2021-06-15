@@ -1,30 +1,11 @@
 const express = require('express');
 const router = express. Router();
+const chatsController = require('../../../controllers/api/v1/chats');
 
 /* /api/v1/chats */
 
-router.get("/", (req, res) =>{
-    res.json({
-        "status": "succes",
-        "data": {
-            "chats": [ ]
-        }
-    });
-});
+router.get("/", chatsController.getAll);
 
-router.post("/", (req, res) =>{
-    res.json({
-        "status": "succes",
-        "data": {
-            "chat": {
-                "sender": "Ruben",
-                "receiver": "kosmodod",
-                "message": "wdj vnv?",
-                "date": "5 aug. 2021", 
-                "id": "1"
-            }
-        }
-    });
-});
+router.post("/", chatsController.create);
 
 module.exports = router;
