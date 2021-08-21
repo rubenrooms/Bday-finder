@@ -3,11 +3,11 @@ const passport = require('../passport/passport');
 
 const signup = async (req, res, next) => {
     console.log(req.body);
-    
+
     let username = req.body.username; //komt uit UI of postman
     let password = req.body.password;
-     
-    const user = new User({username: username}); //user object wordt aangemaakt
+
+    const user = new User({ username: username }); //user object wordt aangemaakt
     await user.setPassword(password); // ww wordt geset en dit zorgt voor encryptie
     await user.save().then(result => {  // wordt gesaved via mongoose
         res.json({
@@ -15,18 +15,24 @@ const signup = async (req, res, next) => {
         })
     }).catch(error => {
         res.json({
-            "status":"error"
+            "status": "error"
         })
-    }); 
+    });
 };
 
 const login = async (req, res, next) => {
     const user = await User.authenticate()(req.body.username, req.body.password).then(result => {
-        res.json({
-            "status": "succes",
-            "data": {
+        if (!result.user) {
+            return res.json({
+                status: "failed",
+                message: "Login failed",
+            });
+        }
+        return res.json({
+            status: "succes",
+            data: {
                 "user": result
-            }
+            },
         });
     }).catch(error => {
         res.json({

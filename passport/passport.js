@@ -7,3 +7,5 @@ passport.use(User.createStrategy());
 //dit is nodig voor sessions
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
+
+module.exports = passport;

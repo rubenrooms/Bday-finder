@@ -19,7 +19,7 @@ document.getElementById("submitBtn").addEventListener("click", (e) => {
         return response.json();
     }).then((json) => {
         console.log(json);
-        if (json.status === "succes"){
+        if ((json.status === "succes")){
 
             //window.location.href = "index.html";
             console.log("succes");
