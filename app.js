@@ -7,6 +7,7 @@ const logger = require('morgan');
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const apiChatsRouter = require('./routes/api/v1/chats');
+const passport = require('./passport/passport');
 
 const mongoose = require('mongoose');
 mongoose.set('useCreateIndex', true);
@@ -25,7 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/api/v1/chats', apiChatsRouter);
+app.use('/api/v1/chats', passport.authenticate('jwt', { session: false }), apiChatsRouter);
 
 //data van html halen
 app.get('/index', (req, res)=> {

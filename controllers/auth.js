@@ -1,21 +1,32 @@
 const User = require('../models/User');
 const passport = require('../passport/passport');
+const jwt = require('jsonwebtoken');
 
 const signup = async (req, res, next) => {
-    console.log(req.body);
-
     let username = req.body.username; //komt uit UI of postman
     let password = req.body.password;
 
     const user = new User({ username: username }); //user object wordt aangemaakt
     await user.setPassword(password); // ww wordt geset en dit zorgt voor encryptie
     await user.save().then(result => {  // wordt gesaved via mongoose
+        
+        console.log(result);
+        
+        let token = jwt.sign({
+            uid: result._id,
+            username: result.username
+        }, "MyVerySecretWord");
+        
         res.json({
-            "status": "succes"
+            "status": "succes",
+            "data": {
+                "token": token
+            }
         })
+
     }).catch(error => {
         res.json({
-            "status": "error"
+            "status": "error" 
         })
     });
 };

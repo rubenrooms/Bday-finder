@@ -27,7 +27,9 @@ document.getElementById("submitBtn").addEventListener("click", (e) => {
     }).then(json => {
         if(json.status === "succes") {
             console.log("gelukt!");
-            
+            let token = json.data.token;
+            localStorage.setItem("token", token);
+
             window.location.href = "index.html";
         }
     })
