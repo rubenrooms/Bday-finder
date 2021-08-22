@@ -5,8 +5,8 @@ const User = require('../models/User');
 passport.use(User.createStrategy());
 
 //dit is nodig voor sessions
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
+//passport.serializeUser(User.serializeUser());
+//passport.deserializeUser(User.deserializeUser());
 
 // WEBTOKEN STRATEGY
 var JwtStrategy = require('passport-jwt').Strategy,
