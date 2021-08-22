@@ -20,8 +20,9 @@ document.getElementById("submitBtn").addEventListener("click", (e) => {
     }).then((json) => {
         console.log(json);
         if ((json.status === "succes")){
-
-            //window.location.href = "index.html";
+            let token = json.data.token;
+            localStorage.setItem("token", token);
+            window.location.href = "index.html";
             console.log("succes");
 
         } else{
