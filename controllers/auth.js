@@ -29,7 +29,8 @@ const signup = async (req, res, next) => {
         res.json({
             "status": "succes",
             "data": {
-                "token": token
+                "token": token,
+                "id": result._id
             }
         })
 
@@ -57,7 +58,8 @@ const login = async (req, res, next) => {
         return res.json({
             "status": "succes",
             "data": {
-                "token": token
+                "token": token,
+                "id": result.user._id
             },
         });
     }).catch(error => {

@@ -29,6 +29,8 @@ document.getElementById("submitBtn").addEventListener("click", (e) => {
             console.log("gelukt!");
             let token = json.data.token;
             localStorage.setItem("token", token);
+            let id = json.data.id;
+            localStorage.setItem("id", id);
 
             window.location.href = "index.html";
         }
