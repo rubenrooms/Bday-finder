@@ -19,4 +19,27 @@ const getBirthdayById = (req, res) => {
     });
 };
 
+const getAllUsersByBirthday = (req, res) => {
+    let birthday = req.params.birthday;
+    console.log(birthday);
+    User.find({
+        birthday: birthday
+    })
+    .exec((err, doc) => {
+        if(err) {
+            res.json({
+                status: "error",
+                message: "No users with the same birthday"
+            });
+        }
+        if (!err) {
+            res.json({
+                status: "succes",
+                data: { users: doc }
+            });
+        }
+    });
+};
+
 module.exports.getBirthdayById = getBirthdayById;
+module.exports.getAllUsersByBirthday = getAllUsersByBirthday;
