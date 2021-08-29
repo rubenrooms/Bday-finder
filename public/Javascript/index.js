@@ -45,8 +45,7 @@ const getUsersByBirthday= () => {
     })
     .then(result => {
         if (result.status === "succes") {
-            firstName = result.data.firstName;
-            lastName = result.data.lastName;
+            username = result.data.username;
             
             const list = document.querySelector(".list");
             //error zit hier egens denk ik, iets met die users result data of bij de functie getAllUsesrsByBirthday
@@ -57,7 +56,7 @@ const getUsersByBirthday= () => {
                 i++;
                 let buddy = document.createElement("li");
                 buddy.classList.add("buddy");
-                li = `<p class="name">${user.firstName} ${user.lastName}</p>  <p class="birthday">${user.birthday}</p>`
+                li = `<a href="chat.html"><p class="name">${user.username}</p>  <p class="birthday">${user.birthday}</p></a>`
                 buddy.innerHTML = li;
                 list.appendChild(buddy);
             });
