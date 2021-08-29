@@ -1,27 +1,4 @@
-const { get } = require("../../../routes");
-
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
-const chatSchema = new Schema({
-    sender: {
-        type: String,
-        required: true
-    },
-    receiver: {
-        type: String,
-        required: true
-    },
-    message: {
-        type: String,
-        required: true
-    },
-    date: {
-        type: Date,
-        required: true
-    }
-});
-
-const Chat = mongoose.model('Chat', chatSchema);
+const Chat = require("/../../../models/Chat");
 
 const getAll = (req, res) =>{
     res.json({
