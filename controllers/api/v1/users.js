@@ -21,7 +21,7 @@ const getBirthdayById = (req, res) => {
 
 const getAllUsersByBirthday = (req, res) => {
     let birthday = req.params.birthday;
-    console.log(birthday);
+    console.log("jow");
     User.find({
         birthday: birthday
     })
@@ -35,7 +35,7 @@ const getAllUsersByBirthday = (req, res) => {
         if (!err) {
             res.json({
                 status: "succes",
-                data: { users: doc }
+                data: doc 
             });
         }
     });

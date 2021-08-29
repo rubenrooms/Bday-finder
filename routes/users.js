@@ -12,5 +12,6 @@ router.post('/signup', authController.signup);
 router.post('/login', authController.login);
 
 router.get("/birthday/:id", usersController.getBirthdayById);
+router.get("/birthday/all/:birthday", usersController.getAllUsersByBirthday);
 
 module.exports = router;

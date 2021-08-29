@@ -30,7 +30,8 @@ const signup = async (req, res, next) => {
             "status": "succes",
             "data": {
                 "token": token,
-                "id": result._id
+                "id": result._id,
+                "birthday": birthday
             }
         })
 
@@ -59,7 +60,8 @@ const login = async (req, res, next) => {
             "status": "succes",
             "data": {
                 "token": token,
-                "id": result.user._id
+                "id": result.user._id,
+                "birthday": result.user.birthday
             },
         });
     }).catch(error => {
