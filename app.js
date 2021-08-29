@@ -8,12 +8,13 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const apiChatsRouter = require('./routes/api/v1/chats');
 const passport = require('./passport/passport');
+const config = require('config');
 
 const mongoose = require('mongoose');
 mongoose.set('useCreateIndex', true);
 
 //fout met db conn, video nog eens checken
-mongoose.connect('mongodb+srv://adminUser:V@R@jpZ.44D4Myq@cluster0.vpr7l.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(process.env.dbconn || config.get('Database.conn'), {useNewUrlParser: true, useUnifiedTopology: true});
 
 const app = express();
 
