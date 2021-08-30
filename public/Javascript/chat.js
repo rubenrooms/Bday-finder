@@ -4,6 +4,7 @@ let birthday = localStorage.getItem("birthday");
 let username = localStorage.getItem("username");
 
 
+
 primus = Primus.connect("http://localhost:3000", {
     reconnect: {
       max: Infinity,
@@ -66,3 +67,34 @@ primus = Primus.connect("http://localhost:3000", {
     }
     
   });
+
+  // alle message van dat kanaal afprinten
+fetch(localhost + '/api/v1/chats', {
+    method: "GET",
+    headers: {
+        "Content-Type": "application/json",
+        Authorization: 'Bearer ' + localStorage.getItem('token')
+    },
+})
+.then(response => {
+    return response.json();
+})
+.then(result => {
+    console.log(result);
+    if (result.status === "succes") {
+      const chats = result.data;
+      //console.log(chats);
+      console.log(chats);
+      chats.forEach((chat) => {
+        let message = `<p class="userName"><strong>${chat.sender}</strong></p>
+                      <p class="Message">${chat.message}</p>`;
+        document.querySelector(".chat").insertAdjacentHTML('beforebegin', message);
+      });
+    } else {
+      console.log("failed");
+    }
+})
+.catch(error =>{
+  console.log(error);
+});
+  

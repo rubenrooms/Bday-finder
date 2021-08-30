@@ -1,13 +1,26 @@
 const Chat = require("../../../models/Chat");
 
 const getAll = (req, res) =>{
-    res.json({
-        "status": "succes",
-        "data": {
-            "chats": [ ]
+    let birthday = req.user.birthday;
+
+    Chat.find({
+        channel: birthday
+    })
+    .exec((err, doc) => {
+        if(err) {
+            res.json({
+                status: "error",
+                message: "No messages found"
+            });
+        }
+        if(!err) {
+            res.json({
+                status: "succes",
+                data: doc
+            });
         }
     });
-}
+};
 
 const create = (req, res) =>{
     let chat = new Chat();
