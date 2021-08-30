@@ -51,7 +51,7 @@ const getUsersByBirthday= () => {
             username = result.data.username;
             
             const list = document.querySelector(".list");
-            //error zit hier egens denk ik, iets met die users result data of bij de functie getAllUsesrsByBirthday
+           
             const users = result.data;
             let i = 0;
             console.log(users);

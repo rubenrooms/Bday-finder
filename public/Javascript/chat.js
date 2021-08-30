@@ -34,7 +34,13 @@ primus = Primus.connect("http://localhost:3000", {
       }).then(json => {
         if (json.status === "succes"){
           console.log(json);
-          
+            let chat = `<div class="host">
+              <p class="hostName"><strong>${username}</strong></p>
+              <p class="hostMessage">${json.data.chat.message}</p>
+              </div>`;
+            document.querySelector(".host").insertAdjacentHTML('afterend', chat);
+            input.value = "";
+            input.focus();
         }
         
       })
