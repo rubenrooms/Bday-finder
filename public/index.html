@@ -10,17 +10,22 @@
 </head>
 <body>
 
-    <header>
-      <a href="login.html" class="navItem btn btn--logout" id="logout">logout</a>
+    <header class="head">
+        <a class="navItem btn btn__logout btn__hidden" href="#"></a>
+        <a href="login.html" class="btn btn__logout" id="logout">logout</a>
     </header>
 
     <section>
         <h3>Your birthday</h3>
         <h1 class="birthday"></h1>
     </section>
-    
-        <h4>Persons with the same birthday</h4>
-        <a href="./chat.html"><button class="btn">Let's chat!</button></a>
+    <a href="./chat.html"><button class="btn btn__chat">Let's chat!</button></a>
+
+        <div class="persons">
+            <h4 class="persons__title">Persons with the same birthday:</h4>
+            <h3 class="persons__counter"></h3>
+        </div>
+        
         <section class="bdaybuddies">
             <ul class="list"></ul>
         </section>

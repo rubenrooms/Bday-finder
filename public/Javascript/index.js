@@ -59,10 +59,13 @@ const getUsersByBirthday= () => {
                 i++;
                 let buddy = document.createElement("li");
                 buddy.classList.add("buddy");
-                li = `<p class="name">${user.username}</p>`
+                li = `<p class="list__name">${user.username}</p>`
                 buddy.innerHTML = li;
                 list.appendChild(buddy);
             });
+            console.log(i);
+            document.querySelector(".persons__counter").innerHTML = i;
+
         } else {
             console.log("failed");
         }

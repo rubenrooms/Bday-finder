@@ -9,38 +9,37 @@
     <title>Signup</title>
 </head>
 <body>
-    <h1>signup page</h1>
 
     <section>
         <h2 class="title">Create an account</h2>
 
-        <form id="signupForm" method="POST">
-          <div>
-            <label for="firstName">First name</label>
-            <input type="text" class="input--text" name="firstname" id="firstName" >
+        <form id="signupForm" class="form" method="POST">
+          <div class="form__part">
+            <label class="form__text" for="firstName">First name</label>
+            <input type="text" class="input--text form__input" name="firstname" id="firstName" >
           </div>
 
-          <div>
-            <label for="lastName">Last name</label>
-            <input type="text" class="input--text" name="lastname" id="lastName" >
+          <div class="form__part">
+            <label class="form__text" for="lastName">Last name</label>
+            <input type="text" class="input--text form__input" name="lastname" id="lastName" >
           </div>
 
-          <div>
-            <label for="username">Username</label>
-            <input type="text" class="input--text" name="username" id="username" >
+          <div class="form__part">
+            <label class="form__text" for="username">Username</label>
+            <input type="text" class="input--text form__input" name="username" id="username" >
           </div>
           
-          <div>
-            <label for="birthday">Date of birth</label>
-            <input type="date" class="input--birthday" name="birthday" id="birthday" >
+          <div class="form__part">
+            <label class="form__text" for="birthday">Date of birth</label>
+            <input type="date" class="input--birthday form__input" name="birthday" id="birthday" >
           </div>
           
-          <div>
-            <label for="password">Password</label>
-            <input type="password" class="input--text" name="password" id="password" >
+          <div class="form__part">
+            <label class="form__text" for="password">Password</label>
+            <input type="password" class="input--text form__input" name="password" id="password" >
           </div>
 
-          <button class="btn btn--submit" id="submitBtn" type="submit">Create an account</button>
+          <button class="btn btn__submit" id="submitBtn" type="submit">Create an account</button>
       </form>
       <p>Already have an account? Click <a href="login.html"> here</a> to log in!</p>
     </section>

@@ -4,6 +4,102 @@ body {
   background-color: rgb(254, 255, 211);
 }
 
-a {
-  color: #00B7FF;
+.btn{
+  text-decoration: none;
+  font-size: 1.3em;
+  font-weight: bold;
+  padding: 0.5em 3em;
+  border-radius: 0.2em;
+  color: white;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+.btn__submit {
+  background-color: darkolivegreen;
+}
+
+.btn__chat {
+  background-color: royalblue;
+}
+
+.btn__logout{
+  background-color: rgba(255, 0, 0, 0.596);
+  padding: 0.5em 1.5em;
+}
+
+.btn__hidden {
+  visibility: hidden;
+}
+
+a{
+  text-decoration: none;
+  color: cornflowerblue;
+}
+
+/* style login and signup page*/
+.form{
+    display: flex;
+    flex-direction: column;
+}
+.form__part{
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 1em;
+  padding-top: 1em;
+}
+
+.form__text{
+  padding-bottom: 1em;
+}
+
+.form__input {
+  height: 2em;
+  border-radius: 0.2em;
+  font-size: 1em;
+}
+
+/* style indexpage */
+.head{
+  display: grid;
+  grid-template-columns: 68% 1fr;
+  margin-bottom: -3em;
+}
+
+.persons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.persons__counter {
+  color: rgb(47, 61, 107);
+}
+
+.list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.list__name {
+  list-style-type: none;
+  color: whitesmoke;
+  padding: 1em;
+  margin: 0.3em;
+  background-color: darkolivegreen;
+  border-radius: 10px;
+}
+
+/* style of chatpage */
+.messages {
+  display: grid;
+  margin-top: 1em;
+}
+
+.chat{
+  padding: 0.5em;
+}
+
+.userName {
+  color: darkolivegreen;
+  margin-bottom: -0.4em;
 }

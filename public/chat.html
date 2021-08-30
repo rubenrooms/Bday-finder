@@ -9,21 +9,23 @@
     <title>Chat</title>
 </head>
 <body>
-    <header>
-        <a href="login.html" class="navItem btn btn--logout" id="logout">logout</a>
+    <header class="head">
+        <a class="navItem btn btn__logout btn__hidden" href="#"></a>
+        <a href="login.html" class="navItem btn btn__logout" id="logout">logout</a>
     </header>
 
-    <section>
+    <section class="messages">
           
         <div class="chat">
             <p class="userName"><strong></strong></p>
             <p class="Message"></p>
         </div>
+        
     </section>
     
         <div>
-            <form action="chat.html" method="POST">
-                <input type="text" name="message" id="message">
+            <form class="form" action="chat.html" method="POST">
+                <input class="form__input" type="text" name="message" id="message">
             </form>
         </div>
   
