@@ -11,15 +11,14 @@ const getAll = (req, res) =>{
 
 const create = (req, res) =>{
     let chat = new Chat();
-    chat.sender = "Ruben";
-    chat.receiver = "kosmodod";
-    chat.message = "wdj vnv?";
-    chat.date = Date.now();
+    chat.sender = req.user.username;
+    chat.message = req.body.text;
+    chat.channel = req.user.birthday;
     chat.save((err, doc) => {
         if (err) {
             res.json({
                 "status": "error",
-                "message": "Could not transfer"
+                "message": "Could not send message"
             });
         }
 
@@ -33,7 +32,6 @@ const create = (req, res) =>{
         }
     });
 
-    
 }
 
 module.exports.getAll = getAll;

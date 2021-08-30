@@ -41,5 +41,26 @@ const getAllUsersByBirthday = (req, res) => {
     });
 };
 
+const getUserById = (req, res) => {
+    let id = localStorage.getItem("id");
+
+    User.findById(id)
+    .exec((err, doc) => {
+        if (err) {
+            res.json({
+                status: "error",
+                message: "No user with that id"
+            });
+        }
+        if (!err) {
+            res.json({
+                status: "succes",
+                data: doc
+            });
+        }
+    });
+};
+
 module.exports.getBirthdayById = getBirthdayById;
 module.exports.getAllUsersByBirthday = getAllUsersByBirthday;
+module.exports.getUserById = getUserById;

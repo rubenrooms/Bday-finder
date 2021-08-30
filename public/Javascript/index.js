@@ -9,7 +9,7 @@ const getBirthday = () => {
     method: "GET",        
     headers: {
             "Content-Type": "application/json",
-            Authorization: 'Bearer ' + localStorage.getItem('token'),
+            Authorization: 'Bearer ' + localStorage.getItem('token')
         },
     })
     .then(response => {
@@ -59,7 +59,7 @@ const getUsersByBirthday= () => {
                 i++;
                 let buddy = document.createElement("li");
                 buddy.classList.add("buddy");
-                li = `<a href="chat.html"><p class="name">${user.username}</p>  <p class="birthday">${user.birthday}</p></a>`
+                li = `<a href="chat.html"><p class="name">${user.username}</p></a>`
                 buddy.innerHTML = li;
                 list.appendChild(buddy);
             });

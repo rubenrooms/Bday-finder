@@ -5,15 +5,11 @@ const chatSchema = new Schema({
         type: String,
         required: true
     },
-    receiver: {
-        type: String,
-        required: true
-    },
     message: {
         type: String,
         required: true
-    },
-    date: {
+    }, 
+    channel: {
         type: Date,
         required: true
     }
