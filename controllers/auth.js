@@ -31,7 +31,8 @@ const signup = async (req, res, next) => {
             "data": {
                 "token": token,
                 "id": result._id,
-                "birthday": birthday
+                "birthday": birthday,
+                "username": username
             }
         })
 
@@ -61,7 +62,8 @@ const login = async (req, res, next) => {
             "data": {
                 "token": token,
                 "id": result.user._id,
-                "birthday": result.user.birthday
+                "birthday": result.user.birthday,
+                "username": result.user.username
             },
         });
     }).catch(error => {

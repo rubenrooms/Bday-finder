@@ -36,6 +36,8 @@ document.getElementById("submitBtn").addEventListener("click", (e) => {
             localStorage.setItem("id", id);
             let birthday = json.data.birthday;
             localStorage.setItem("birthday", birthday);
+            let username = json.data.username;
+            localStorage.setItem("username", username);
 
             window.location.href = "index.html";
         }

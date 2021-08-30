@@ -1,6 +1,8 @@
 const url = "https://bdayfinder-ruben.herokuapp.com";
 const localhost = "http://localhost:8888";
 let birthday = localStorage.getItem("birthday");
+let username = localStorage.getItem("username");
+
 
 primus = Primus.connect("http://localhost:3000", {
     reconnect: {
