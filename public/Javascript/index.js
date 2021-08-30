@@ -59,7 +59,7 @@ const getUsersByBirthday= () => {
                 i++;
                 let buddy = document.createElement("li");
                 buddy.classList.add("buddy");
-                li = `<a href="chat.html"><p class="name">${user.username}</p></a>`
+                li = `<p class="name">${user.username}</p>`
                 buddy.innerHTML = li;
                 list.appendChild(buddy);
             });

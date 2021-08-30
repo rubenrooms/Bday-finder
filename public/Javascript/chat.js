@@ -12,6 +12,20 @@ primus = Primus.connect("http://localhost:3000", {
     },
   });
 
+    primus.on('data', (json) => {
+      if(json.action === "sendMessage") {
+        appendChat(json.data);
+      }
+    });
+
+  
+  // chatbericht maken
+  let appendChat = (json) => {
+    let chat = `<p class="userName"><strong>${json.data.chat.sender}</strong></p>
+                <p class="Message">${json.data.chat.message}</p>`;
+    document.querySelector(".chat").insertAdjacentHTML('beforebegin', chat);
+  }
+
   // op enter chatbericht opslaan in database
   let input = document.getElementById("message");
   input.addEventListener("keydown", e => {
@@ -34,13 +48,13 @@ primus = Primus.connect("http://localhost:3000", {
       }).then(json => {
         if (json.status === "succes"){
           console.log(json);
-            let chat = `<div class="host">
-              <p class="hostName"><strong>${username}</strong></p>
-              <p class="hostMessage">${json.data.chat.message}</p>
-              </div>`;
-            document.querySelector(".host").insertAdjacentHTML('afterend', chat);
             input.value = "";
             input.focus();
+
+            primus.write({
+                "action": "sendMessage",
+                "data": json
+            });
         }
         
       })
