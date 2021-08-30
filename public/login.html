@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="dist/app.css">
+    <link rel="stylesheet" href="./stylesheets/style.css">
+
+    
     <title>Log in</title>
 </head>
 <body>
     <h1>Login page</h1>
 
     <section>
-        <h2 class="title">Log in</h2>
+        <h2 class="title">Please log in</h2>
 
         <form id="loginForm" method="POST">
             <div>
@@ -23,8 +27,9 @@
             <input type="password" class="input--text" name="password" id="password" >
           </div>
 
-          <button id="submitBtn" type="submit">Log in</button>
-      </form>
+          <button class="btn btn--submit" id="submitBtn" type="submit">Log in</button>
+        </form>
+        <p>Don't have an account? Create one <a href="signup.html">here</a>!</p>
     </section>
 
     <script src="./Javascript/login.js"></script>

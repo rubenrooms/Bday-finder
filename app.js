@@ -62,7 +62,7 @@ app.use(function(err, req, res, next) {
   });
 });
 
-var listener = app.listen(8888, function(){
+var listener = app.listen(8888, () => {
   console.log('Listening on port ' + listener.address().port); //Listening on port 8888
 });
 

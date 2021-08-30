@@ -1,0 +1,11 @@
+.btn {
+    color: white;
+    display: inline-block;
+    margin: 1em;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btn--logout{
+    background-color: $color-logout;
+}
