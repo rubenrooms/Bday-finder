@@ -7,9 +7,10 @@ document.getElementById("submitBtn").addEventListener("click", (e) => {
     let birthday = document.querySelector('#birthday').value;
     let password = document.querySelector('#password').value;
 
+    const url = "https://bdayfinder-ruben.herokuapp.com";
     console.log(firstName, lastName, username, birthday, password);
 
-    fetch('http://localhost:8888/users/signup', {
+    fetch( url + '/users/signup', {
         method: "post",
         headers: {
             'Content-Type': 'application/json'
