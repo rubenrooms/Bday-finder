@@ -8,9 +8,11 @@ document.getElementById("submitBtn").addEventListener("click", (e) => {
     let password = document.querySelector('#password').value;
 
     const url = "https://bdayfinder-ruben.herokuapp.com";
+    const localhost = "http://localhost:8888";
+
     console.log(firstName, lastName, username, birthday, password);
 
-    fetch( url + '/users/signup', {
+    fetch( localhost + '/users/signup', {
         method: "post",
         headers: {
             'Content-Type': 'application/json'

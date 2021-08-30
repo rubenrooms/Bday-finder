@@ -1,9 +1,11 @@
 const url = "https://bdayfinder-ruben.herokuapp.com";
+const localhost = "http://localhost:8888";
 const id = localStorage.getItem("id");
 let user;
 let birthday = localStorage.getItem("birthday");
+
 const getBirthday = () => {
-  fetch( url + `/users/birthday/${id}`, {
+  fetch( localhost + `/users/birthday/${id}`, {
     method: "GET",        
     headers: {
             "Content-Type": "application/json",
@@ -34,7 +36,7 @@ getBirthday();
 
 // code voor lijst van users met dezelfde birthday
 const getUsersByBirthday= () => {
-    fetch( url + `/users/birthday/all/${birthday}`, { //http://localhost:8888
+    fetch( localhost + `/users/birthday/all/${birthday}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",

@@ -1,3 +1,8 @@
 {
-    
+    "Database": {
+        "conn": "mongodb+srv://adminUser:V@R@jpZ.44D4Myq@cluster0.vpr7l.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+    },
+    "jwt": {
+        "secret": "MyVerySecretWord"
+    }
 }

@@ -4,9 +4,10 @@ document.getElementById("submitBtn").addEventListener("click", (e) => {
     let username = document.querySelector('#username').value;
     let password = document.querySelector('#password').value;
     const url = "https://bdayfinder-ruben.herokuapp.com";
+    const localhost = "http://localhost:8888";
     //console.log(username);
 
-    fetch( url + "/users/login", {
+    fetch( localhost + "/users/login", {
         method: "post",
         headers: {
             'Content-Type': 'application/json'
