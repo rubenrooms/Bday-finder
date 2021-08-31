@@ -5,7 +5,7 @@ let username = localStorage.getItem("username");
 
 
 
-primus = Primus.connect("http://localhost:3000", {
+primus = Primus.connect(url, {
     reconnect: {
       max: Infinity,
       min: 500,
