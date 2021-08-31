@@ -1,7 +1,7 @@
 const url = "https://bdayfinder-ruben.herokuapp.com";
 const localhost = "http://localhost:8888";
 const id = localStorage.getItem("id");
-let user;
+//let user;
 let birthday = localStorage.getItem("birthday");
 
 const getBirthday = () => {
