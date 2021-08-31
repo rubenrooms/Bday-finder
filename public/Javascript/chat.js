@@ -34,7 +34,7 @@ primus = Primus.connect("http://localhost:3000", {
       let text = input.value;
       console.log(text);
 
-      fetch(localhost + '/api/v1/chats', {
+      fetch(url + '/api/v1/chats', {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -69,7 +69,7 @@ primus = Primus.connect("http://localhost:3000", {
   });
 
   // alle message van dat kanaal afprinten
-fetch(localhost + '/api/v1/chats', {
+fetch(url + '/api/v1/chats', {
     method: "GET",
     headers: {
         "Content-Type": "application/json",

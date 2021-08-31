@@ -5,7 +5,7 @@ let user;
 let birthday = localStorage.getItem("birthday");
 
 const getBirthday = () => {
-  fetch( localhost + `/users/birthday/${id}`, {
+  fetch( url + `/users/birthday/${id}`, {
     method: "GET",        
     headers: {
             "Content-Type": "application/json",
@@ -36,7 +36,7 @@ getBirthday();
 
 // code voor lijst van users met dezelfde birthday
 const getUsersByBirthday= () => {
-    fetch( localhost + `/users/birthday/all/${birthday}`, {
+    fetch( url + `/users/birthday/all/${birthday}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",

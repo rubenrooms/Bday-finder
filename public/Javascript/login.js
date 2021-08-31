@@ -7,7 +7,7 @@ document.getElementById("submitBtn").addEventListener("click", (e) => {
     const localhost = "http://localhost:8888";
     //console.log(username);
 
-    fetch( localhost + "/users/login", {
+    fetch( url + "/users/login", {
         method: "post",
         headers: {
             'Content-Type': 'application/json'

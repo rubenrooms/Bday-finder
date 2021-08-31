@@ -12,7 +12,7 @@ document.getElementById("submitBtn").addEventListener("click", (e) => {
 
     console.log(firstName, lastName, username, birthday, password);
 
-    fetch( localhost + '/users/signup', {
+    fetch( url + '/users/signup', {
         method: "post",
         headers: {
             'Content-Type': 'application/json'
